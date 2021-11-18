@@ -24,7 +24,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // register a router
         router.register(clsTarget: UserServiceEntry.self)
+        
         router.register(uri: "test://log/log", clsTarget: LogServiceEntry.self)
+        
+        router.register(uri: "test://view.controller/testViewController", clsTarget: MGViewControllerService<TestViewController>.self)
 
         return true
     }

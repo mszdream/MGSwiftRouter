@@ -26,11 +26,28 @@ class ViewController: UIViewController {
         btnLog.setTitle("Method call", for: .normal)
         btnLog.addTarget(self, action: #selector(methodButtonClicked(sender:)), for: .touchUpInside)
         self.view.addSubview(btnLog)
+        
+        let btnTestVc = UIButton(type: .system)
+        btnTestVc.frame = CGRect(x: 10, y: 140, width: 100, height: 32)
+        btnTestVc.setTitle("Open Test Page", for: .normal)
+        btnTestVc.addTarget(self, action: #selector(testButtonClicked(sender:)), for: .touchUpInside)
+        self.view.addSubview(btnTestVc)
     }
 
     @objc func userButtonClicked(sender: AnyObject) {
         // Calling service through the URI
         router.router("test://user?userId=1&username=zhangsan&password=123456") { (params) in
+            guard let params = params as? String else {
+                return
+            }
+            
+            print(params)
+        }
+    }
+    
+    @objc func testButtonClicked(sender: AnyObject) {
+        // Calling service through the URI
+        router.router("test://view.controller/testViewController?userId=1&username=zhangsan&password=123456&isPushed=false") { (params) in
             guard let params = params as? String else {
                 return
             }

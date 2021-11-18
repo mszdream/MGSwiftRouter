@@ -18,6 +18,7 @@
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		8D948EA4CB152B3B1464A7B0 /* Pods_MGSwiftRouter_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEAF00189FE6F418AF36CA5E /* Pods_MGSwiftRouter_Tests.framework */; };
 		91AA38F6E473CE1AABA9E78B /* Pods_MGSwiftRouter_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC003984DC2A258FBFBAFCB9 /* Pods_MGSwiftRouter_Example.framework */; };
+		CE7F864527462B6C001576A1 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7F864427462B6C001576A1 /* TestViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		BFD3019BBBC7FD3133599C23 /* MGSwiftRouter.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = MGSwiftRouter.podspec; path = ../MGSwiftRouter.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		C21B27E28059F677032F58D2 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		C2A5AE05251986826E3A42D0 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		CE7F864427462B6C001576A1 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		DC003984DC2A258FBFBAFCB9 /* Pods_MGSwiftRouter_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MGSwiftRouter_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEAF00189FE6F418AF36CA5E /* Pods_MGSwiftRouter_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MGSwiftRouter_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -80,6 +82,7 @@
 			children = (
 				2A9B7F1925E7CFD0002B798A /* UserViewController.swift */,
 				2A9B7F8125E9262B002B798A /* LogModule.swift */,
+				CE7F864427462B6C001576A1 /* TestViewController.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				2A9B7F1A25E7CFD0002B798A /* UserViewController.swift in Sources */,
 				2A9B7F8225E9262B002B798A /* LogModule.swift in Sources */,
 				2A9B7F6525E8E4AE002B798A /* CommonTools.swift in Sources */,
+				CE7F864527462B6C001576A1 /* TestViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,8 +8,9 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MGSwiftRouter'
-  s.version          = '1.0.0'
+  s.version          = '1.1.0'
   s.summary          = 'A router library.'
+  s.swift_versions   = '4.0'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -30,8 +31,22 @@ General routing, through which we can access our module entrance and pass releva
 
   s.ios.deployment_target = '9.0'
 
-  s.source_files = 'MGSwiftRouter/Classes/**/*'
-  
+#  s.source_files = 'MGSwiftRouter/Classes/**/*'
+  s.subspec 'Core' do |ss|
+    ss.source_files = 'MGSwiftRouter/Classes/Core/**/*'
+    ss.xcconfig = {
+      "OTHER_SWIFT_FLAGS" => "-D #{ss.name.tr!("//", "_")}"
+    }
+  end
+  s.subspec 'RouterService' do |ss|
+    ss.source_files = 'MGSwiftRouter/Classes/RouterService/**/*'
+    ss.dependency 'MGSwiftRouter/Core'
+    ss.xcconfig = {
+      "OTHER_SWIFT_FLAGS" => "-D #{ss.name.tr!("//", "_")}"
+    }
+  end
+
+
   # s.resource_bundles = {
   #   'MGSwiftRouter' => ['MGSwiftRouter/Assets/*.png']
   # }
