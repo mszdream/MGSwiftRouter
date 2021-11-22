@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MGSwiftRouter'
-  s.version          = '1.1.0'
+  s.version          = '1.1.1'
   s.summary          = 'A router library.'
   s.swift_versions   = '4.0'
 

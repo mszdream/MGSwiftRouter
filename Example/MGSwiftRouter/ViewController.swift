@@ -46,8 +46,13 @@ class ViewController: UIViewController {
     }
     
     @objc func testButtonClicked(sender: AnyObject) {
+        var strParam = "userId=1&username=zhangsan&password=123456&isPushed=false"
+        for i in 0...1000 {
+            strParam += "&key_\(i)=\(i)"
+        }
+        
         // Calling service through the URI
-        router.router("test://view.controller/testViewController?userId=1&username=zhangsan&password=123456&isPushed=false") { (params) in
+        router.router("test://view.controller/testViewController?\(strParam)", auxiliaryInfo: ["zero": 0]) { (params) in
             guard let params = params as? String else {
                 return
             }

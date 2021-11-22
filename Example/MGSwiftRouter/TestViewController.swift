@@ -39,6 +39,8 @@ class TestViewController: UIViewController {
             passwordLabel.text = "Password: \(password)"
             v.addSubview(passwordLabel)
         }
+        
+        print(mg_router_parameters ?? [:])
 
         self.view.addSubview(v)
         

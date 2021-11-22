@@ -10,7 +10,7 @@ import Foundation
 public let router = Router.shared
 public final class Router {
     typealias RouterContainer = [String: [String: MGServiceEntry.Type]]
-    typealias ParamsType = [String: String]
+    typealias ParamsType = [String: Any]
     
     internal static let defaultScheme = "mugua"
     private var dicRouter: RouterContainer = [:]
@@ -62,10 +62,13 @@ extension Router {
     
     /// Calling service through the URI
     /// uri: The unique identity
+    /// auxiliaryInfo: auxiliary information
     /// retClosure: return closure
     /// return: error-failed, nil-successful
     @discardableResult
-    public func router(_ uri: String, retClosure: MGServiceEntry.RetClosure? = nil) -> MGRouterError? {
+    public func router(_ uri: String,
+                       auxiliaryInfo: [String: Any]? = nil,
+                       retClosure: MGServiceEntry.RetClosure? = nil) -> MGRouterError? {
         guard let uri = URLComponents(string: uri) else {
             return .uriNotSpecified
         }
@@ -88,6 +91,7 @@ extension Router {
             return .serviceEntryNotRecognized
         }
         
+        // Parse query parameters
         var params: ParamsType = [:]
         if let query = uri.query {
             let items = query.split(separator: "&")
@@ -99,6 +103,11 @@ extension Router {
                     params[key] = value
                 }
             }
+        }
+        
+        // add auxiliary information
+        if let auxiliaryInfo = auxiliaryInfo {
+            params["auxiliaryInfo"] = auxiliaryInfo
         }
         
         clsTarget.shooting(scheme: scheme, path: uri.path, params: params, retClosure: retClosure)
