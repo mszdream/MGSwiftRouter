@@ -19,6 +19,10 @@ DerivedData
 *.hmap
 *.ipa
 
+Example/MGSwiftRouter.xcworkspace/
+Example/Podfile.lock
+Example/Pods/
+
 # Bundler
 .bundle
 
